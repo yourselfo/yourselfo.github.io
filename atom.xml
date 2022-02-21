@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>wjie blog</title>
+  
+  
+  <link href="https://yourselfo.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://yourselfo.github.io/"/>
+  <updated>2022-02-21T09:21:14.599Z</updated>
+  <id>https://yourselfo.github.io/</id>
+  
+  <author>
+    <name>Jason Wang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Google Nginx 反代理翻墙服务搭建</title>
+    <link href="https://yourselfo.github.io/2022/02/21/Google%20Nginx%20%E5%8F%8D%E4%BB%A3%E7%90%86%E7%BF%BB%E5%A2%99%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/"/>
+    <id>https://yourselfo.github.io/2022/02/21/Google%20Nginx%20%E5%8F%8D%E4%BB%A3%E7%90%86%E7%BF%BB%E5%A2%99%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/</id>
+    <published>2022-02-21T08:33:26.337Z</published>
+    <updated>2022-02-21T09:21:14.599Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Nginx-配置&quot;&gt;&lt;a href=&quot;#Nginx-配置&quot; class=&quot;headerlink&quot; title=&quot;Nginx 配置&quot;&gt;&lt;/a&gt;Nginx 配置&lt;/h2&gt;&lt;figure class=&quot;highlight yml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
