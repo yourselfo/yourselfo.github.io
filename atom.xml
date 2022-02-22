@@ -6,7 +6,7 @@
   <link href="https://yourselfo.github.io/atom.xml" rel="self"/>
   
   <link href="https://yourselfo.github.io/"/>
-  <updated>2022-02-21T09:21:14.599Z</updated>
+  <updated>2022-02-22T01:57:11.301Z</updated>
   <id>https://yourselfo.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>服务端口知识</title>
+    <link href="https://yourselfo.github.io/2022/02/22/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%8F%A3%E7%9F%A5%E8%AF%86/"/>
+    <id>https://yourselfo.github.io/2022/02/22/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%8F%A3%E7%9F%A5%E8%AF%86/</id>
+    <published>2022-02-22T01:55:51.654Z</published>
+    <updated>2022-02-22T01:57:11.301Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;最常用的网页-80-和-443-端口&quot;&gt;&lt;a href=&quot;#最常用的网页-80-和-443-端口&quot; class=&quot;headerlink&quot; title=&quot;最常用的网页 80 和 443 端口&quot;&gt;&lt;/a&gt;最常用的网页 80 和 443 端口&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Google Nginx 反代理翻墙服务搭建</title>
     <link href="https://yourselfo.github.io/2022/02/21/Google%20Nginx%20%E5%8F%8D%E4%BB%A3%E7%90%86%E7%BF%BB%E5%A2%99%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/"/>
     <id>https://yourselfo.github.io/2022/02/21/Google%20Nginx%20%E5%8F%8D%E4%BB%A3%E7%90%86%E7%BF%BB%E5%A2%99%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA/</id>
     <published>2022-02-21T08:33:26.337Z</published>
-    <updated>2022-02-21T09:21:14.599Z</updated>
+    <updated>2022-02-22T02:03:37.300Z</updated>
     
     
       

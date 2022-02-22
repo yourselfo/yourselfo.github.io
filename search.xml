@@ -6,4 +6,34 @@
     <content><![CDATA[<h2 id="Nginx-配置"><a href="#Nginx-配置" class="headerlink" title="Nginx 配置"></a>Nginx 配置</h2><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">upstream</span> <span class="string">www.google.com</span> &#123;</span><br><span class="line">    <span class="string">server</span> <span class="number">173.194</span><span class="number">.38</span><span class="number">.1</span><span class="string">:443;</span></span><br><span class="line">    <span class="string">server</span> <span class="number">173.194</span><span class="number">.38</span><span class="number">.2</span><span class="string">:443;</span></span><br><span class="line">    <span class="string">server</span> <span class="number">173.194</span><span class="number">.38</span><span class="number">.3</span><span class="string">:443;</span></span><br><span class="line">    <span class="string">server</span> <span class="number">173.194</span><span class="number">.38</span><span class="number">.4</span><span class="string">:443;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">server&#123;</span></span><br><span class="line">    <span class="string">listen</span> <span class="number">80</span><span class="string">;</span></span><br><span class="line">    <span class="string">server_name</span> <span class="string">xxoo.lol</span> <span class="string">www.xxoo.lol;</span></span><br><span class="line">    <span class="string">rewrite</span> <span class="string">^(.*)</span> <span class="string">https://xxoo.lol/$1</span> <span class="string">permanent;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="string">server&#123;</span></span><br><span class="line">    <span class="string">listen</span> <span class="number">443</span><span class="string">;</span></span><br><span class="line">    <span class="string">server_name</span> <span class="string">xxoo.lol;</span></span><br><span class="line">    <span class="string">ssl</span> <span class="string">on;</span></span><br><span class="line">    <span class="string">ssl_certificate</span> <span class="string">/usr/local/nginx/conf/vhost/ca/xxoo.lol.crt;</span></span><br><span class="line">    <span class="string">ssl_certificate_key</span> <span class="string">/usr/local/nginx/conf/vhost/ca/xxoo.lol.key;</span></span><br><span class="line">    <span class="string">ssl_protocols</span> <span class="string">SSLv3</span> <span class="string">TLSv1;</span></span><br><span class="line">    <span class="string">ssl_ciphers</span> <span class="string">ALL:-ADH:+HIGH:+MEDIUM:-LOW:-SSLv2:-EXP;</span></span><br><span class="line"></span><br><span class="line">    <span class="string">location</span> <span class="string">/</span> &#123;</span><br><span class="line">        <span class="string">proxy_redirect</span> <span class="string">off;</span></span><br><span class="line">        <span class="string">proxy_set_header</span> <span class="string">X-Real-IP</span> <span class="string">$remote_addr;</span></span><br><span class="line">        <span class="string">proxy_set_header</span> <span class="string">X-Forwarded-For</span> <span class="string">$proxy_add_x_forwarded_for;</span></span><br><span class="line">        <span class="string">proxy_set_header</span> <span class="string">X-Forwarded-Proto</span> <span class="string">https;</span></span><br><span class="line">        <span class="string">proxy_pass</span> <span class="string">https://www.google.com.hk;</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
+  <entry>
+    <title>服务端口知识</title>
+    <url>/2022/02/22/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%8F%A3%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h1 id="最常用的网页-80-和-443-端口"><a href="#最常用的网页-80-和-443-端口" class="headerlink" title="最常用的网页 80 和 443 端口"></a>最常用的网页 80 和 443 端口</h1><h2 id="1-1-端口介绍"><a href="#1-1-端口介绍" class="headerlink" title="1.1 端口介绍"></a>1.1 端口介绍</h2><p>端口：80</p>
+<p>服务：HTTP</p>
+<p>说明：用于网页浏览。木马 Executor 开放此端口</p>
+<p>端口：443</p>
+<p>服务：Https</p>
+<p>说明：网页浏览端口，能提供加密和通过安全端口传输的另一种 HTTP。</p>
+<hr>
+<h2 id="1-2-有何异同"><a href="#1-2-有何异同" class="headerlink" title="1.2 有何异同"></a>1.2 有何异同</h2><p><strong>(1) 协议不同</strong></p>
+<p>1、443 端口：即网页浏览端口，主要是用于 HTTPS 服务，是提供加密和通过安全端口传输的另一种 HTTP。</p>
+<p>2、80 端口：为 HTTP（HyperText Transport Protocol)即超文本传输协议开放的，此为上网冲浪使用次数最多的协议，主要用于 WWW（World Wide Web）即万维网传输信息的协议。</p>
+<p><strong>(2)漏洞不同</strong></p>
+<p>1、443 端口：HTTPS服务一般是通过SSL（安全套接字层）来保证安全性的，但是SSL漏洞可能会受到黑客的攻击，比如可以黑掉在线银行系统，盗取信用卡账号等。</p>
+<p>2、80 端口：木马程序可以利用 80 端口来攻击计算机的，例如 Executor、RingZero 等。</p>
+<p><strong>(3)操作不同</strong></p>
+<p>1、443 端口：对安全性要求较高的网站，比如银行、证券、购物等，都采用HTTPS服务，这样在这些网站上的交换信息，其他人抓包获取到的是加密数据，保证了交易的安全性。网页的地址以https:&#x2F;&#x2F;开始，而不是常见的http:&#x2F;&#x2F;。</p>
+<p>2、80 端口：通过HTTP地址（即常说的“网址”）加“:80”来访问网站，因为浏览网页服务默认的端口号都是80，因此只需输入网址即可，不用输入“:80”了。</p>
+<hr>
+<p><strong>这两个端口最大的区别其实就在于服务不同。</strong></p>
+<p>HTTPS（Secure Hypertext Transfer Protocol）安全超文本传输协议 它是一个安全通信通道，它基于 HTTP 开发，用于在客户计算机和服务器之间交换信息。它使用安全套接字层 (SSL) 进行信息交换，简单来说它是 HTTP 的安全版。</p>
+<p>HTTPS 和 HTTP 的区别：</p>
+<p>https 协议需要到 ca 申请证书，一般免费证书很少，需要交费。</p>
+<p>http 是超文本传输协议，信息是明文传输，https 则是具有安全性的 ssl 加密传输协议</p>
+<p>http 和 https 使用的是完全不同的连接方式用的端口也不一样,前者是 80,后者是 443。</p>
+<p>http 的连接很简单,是无状态的 HTTPS 协议是由 SSL+HTTP 协议构建的可进行加密传输、身份认证的网络协议 要比 http 协议安全</p>
+<p>来源: 洪卫の博客<br>文章链接: <a href="https://sunhwee.com/posts/7fa1284c.html">https://sunhwee.com/posts/7fa1284c.html</a><br>本文章著作权归作者所有，任何形式的转载都请注明出处。</p>
+]]></content>
+  </entry>
 </search>
